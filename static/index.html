@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sphinx Semantic AI — Semantic Intelligence, Reimagined</title>
+    <meta name="description" content="Sphinx Semantic AI is a production-grade semantic search engine powered by a custom Siamese Transformer architecture. Analyze meaning, discover connections, train in real-time.">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔮</text></svg>">
+</head>
+<body>
+    <div id="toast-container" class="toast-container"></div>
+    <nav class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="#" class="nav-brand">
+                <img src="/static/logo.png" alt="Sphinx Logo" class="nav-logo-img">
+                <span class="nav-brand-text">Sphinx Semantic AI</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#predict">Analyze</a></li>
+                <li><a href="#train">Train</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="/static/hero-bg.png" alt="Neural network visualization">
+        </div>
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                <span>Model Active — Sphinx V1</span>
+            </div>
+            <h1 class="hero-title">
+                Semantic Intelligence,<br>
+                <span class="gradient-text">Reimagined.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Powered by a custom Siamese Transformer trained on semantic textual similarity.
+                Understand meaning, discover connections, and teach the model — all in real time.
+            </p>
+            <div class="hero-cta">
+                <a href="#predict" class="btn btn-primary">
+                    <span>⚡</span>
+                    <span>Start Analyzing</span>
+                </a>
+                <a href="#features" class="btn btn-secondary">
+                    <span>Explore Features</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="stats-bar" id="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value" id="stat-model">Sphinx V1</div>
+                    <div class="stat-label">Model</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="stat-params">—</div>
+                    <div class="stat-label">Parameters</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="stat-arch">—</div>
+                    <div class="stat-label">Architecture</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="stat-sessions">0</div>
+                    <div class="stat-label">Train Sessions</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="stat-version">v1.0.0</div>
+                    <div class="stat-label">Version</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section predict-section" id="predict">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <div class="section-label">Semantic Analysis</div>
+                <h2 class="section-title">Analyze Sentence Similarity</h2>
+                <p class="section-desc">
+                    Enter two sentences and let Sphinx Semantic AI measure their semantic similarity 
+                    using deep contextual understanding.
+                </p>
+            </div>
+            <div class="predict-panel glass-card fade-in-up">
+                <div class="predict-inputs">
+                    <div class="input-group">
+                        <label class="input-label" for="sentence1">Sentence A</label>
+                        <textarea class="input-field" id="sentence1" placeholder="e.g., A man is playing guitar in the park"></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="sentence2">Sentence B</label>
+                        <textarea class="input-field" id="sentence2" placeholder="e.g., A person plays a musical instrument outdoors"></textarea>
+                    </div>
+                </div>
+                <div class="predict-action">
+                    <button class="btn btn-primary" id="predict-btn">
+                        <span class="btn-spinner"></span>
+                        <span class="btn-text">⚡ Analyze Similarity</span>
+                    </button>
+                </div>
+                <div class="result-container" id="predict-result">
+                    <div class="gauge-wrapper">
+                        <svg class="gauge-svg" viewBox="0 0 220 220">
+                            <defs>
+                                <linearGradient id="gauge-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#00d4ff"/>
+                                    <stop offset="50%" style="stop-color:#3b82f6"/>
+                                    <stop offset="100%" style="stop-color:#8b5cf6"/>
+                                </linearGradient>
+                            </defs>
+                            <circle class="gauge-bg" cx="110" cy="110" r="100"/>
+                            <circle class="gauge-fill" cx="110" cy="110" r="100"/>
+                        </svg>
+                        <div class="gauge-value">
+                            <div class="gauge-number">0%</div>
+                            <div class="gauge-label">Similarity</div>
+                        </div>
+                    </div>
+                    <div class="result-interpretation" id="result-interpretation">—</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="train">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <div class="section-label">Self-Learning Engine</div>
+                <h2 class="section-title">Train the Model</h2>
+                <p class="section-desc">
+                    Submit sentence pairs with similarity labels. Sphinx Semantic AI will fine-tune 
+                    itself automatically in the background — a truly self-evolving system.
+                </p>
+            </div>
+            <div class="train-panel glass-card fade-in-up">
+                <div class="train-inputs">
+                    <div class="input-group">
+                        <label class="input-label" for="train-sentence1">Sentence A</label>
+                        <textarea class="input-field" id="train-sentence1" placeholder="Enter first training sentence..."></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="train-sentence2">Sentence B</label>
+                        <textarea class="input-field" id="train-sentence2" placeholder="Enter second training sentence..."></textarea>
+                    </div>
+                </div>
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <label class="input-label" for="similarity-slider">Similarity Score</label>
+                        <span class="slider-value" id="slider-value">0.50</span>
+                    </div>
+                    <input type="range" class="range-slider" id="similarity-slider" min="0" max="1" step="0.01" value="0.5">
+                </div>
+                <div class="train-action">
+                    <button class="btn btn-primary" id="train-btn">
+                        <span class="btn-spinner"></span>
+                        <span class="btn-text">🔄 Submit Training Data</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <div class="section-label">Capabilities</div>
+                <h2 class="section-title">Built for Intelligence</h2>
+                <p class="section-desc">
+                    A ground-up transformer architecture designed specifically for deep semantic understanding.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="glass-card feature-card fade-in-up">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">Custom Transformer</h3>
+                    <p class="feature-desc">Built from scratch — a Siamese Transformer with shared encoders, positional embeddings, and multi-head attention for deep contextual representation.</p>
+                </div>
+                <div class="glass-card feature-card fade-in-up">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Real-time Inference</h3>
+                    <p class="feature-desc">Instant semantic similarity analysis powered by optimized TensorFlow execution. Compare any two sentences and get a precise similarity score.</p>
+                </div>
+                <div class="glass-card feature-card fade-in-up">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">Self-Learning Pipeline</h3>
+                    <p class="feature-desc">Submit sentence pairs with labels and the model fine-tunes automatically in the background using contrastive loss — a truly adaptive system.</p>
+                </div>
+                <div class="glass-card feature-card fade-in-up">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Live Dashboard</h3>
+                    <p class="feature-desc">Monitor training history, model metrics, and performance in real-time. Full transparency into how your AI evolves with each training session.</p>
+                </div>
+                <div class="glass-card feature-card fade-in-up">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Privacy-First Design</h3>
+                    <p class="feature-desc">All processing happens locally on your machine. No data sent to external services — your sentences never leave your infrastructure.</p>
+                </div>
+                <div class="glass-card feature-card fade-in-up">
+                    <div class="feature-icon">🌍</div>
+                    <h3 class="feature-title">BERT Tokenization</h3>
+                    <p class="feature-desc">Leverages the powerful BERT tokenizer with 30,522 vocabulary tokens for robust sub-word representation across domains and writing styles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="dashboard">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <div class="section-label">System Monitor</div>
+                <h2 class="section-title">Model Dashboard</h2>
+                <p class="section-desc">
+                    Real-time insights into the Sphinx Semantic AI model — architecture, training history, and performance metrics.
+                </p>
+            </div>
+            <div class="dashboard-grid fade-in-up">
+                <div class="glass-card">
+                    <h3 style="font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 20px; font-weight: 700;">Training History</h3>
+                    <div class="log-table-wrapper">
+                        <table class="log-table">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Loss</th>
+                                    <th>Label</th>
+                                    <th>Sentence</th>
+                                </tr>
+                            </thead>
+                            <tbody id="log-tbody"></tbody>
+                        </table>
+                        <div class="log-empty" id="log-empty">
+                            <div class="icon">📭</div>
+                            <p>No training sessions yet.<br>Submit sentence pairs above to start teaching the model.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card">
+                    <h3 style="font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 20px; font-weight: 700;">Model Architecture</h3>
+                    <div class="metric-cards">
+                        <div class="metric-card">
+                            <div class="metric-value" id="metric-params">—</div>
+                            <div class="metric-label">Parameters</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="metric-layers">—</div>
+                            <div class="metric-label">Layers</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="metric-heads">—</div>
+                            <div class="metric-label">Attention Heads</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="metric-dmodel">—</div>
+                            <div class="metric-label">Embedding Dim</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="metric-vocab">—</div>
+                            <div class="metric-label">Vocabulary</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="metric-maxlen">—</div>
+                            <div class="metric-label">Max Seq Length</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="metric-sessions">0</div>
+                            <div class="metric-label">Train Sessions</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="metric-loss">—</div>
+                            <div class="metric-label">Loss Function</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">Sphinx Semantic AI</div>
+            <p class="footer-text">Semantic Intelligence, Reimagined — Built from Scratch</p>
+            <div class="footer-tech">
+                <span>TensorFlow</span>
+                <span>Keras</span>
+                <span>BERT Tokenizer</span>
+                <span>FastAPI</span>
+                <span>Siamese Transformer</span>
+                <span>Contrastive Loss</span>
+            </div>
+        </div>
+    </footer>
+    <script src="/static/app.js"></script>
+</body>
+</html>

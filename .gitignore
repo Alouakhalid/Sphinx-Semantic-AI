@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store
+.env
+.venv
+env/
+venv/
+ENV/
+*.keras
+*.h5
+training_data.jsonl
+training_log.txt
+static/logo.png
+static/hero-bg.png
+node_modules/
+.ipynb_checkpoints/
